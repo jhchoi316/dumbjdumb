@@ -7,10 +7,7 @@ import ReactFlow, {
   Controls,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-
-
 import Aside from './Aside';
-
 import './index.css';
 
 const initialNodes = [
@@ -27,7 +24,7 @@ const getId = () => `dndnode_${id++}`;
 
 const DnDFlow = () => {
   const reactFlowWrapper = useRef(null);
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
 
@@ -44,6 +41,7 @@ const DnDFlow = () => {
 
       const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
       const type = event.dataTransfer.getData('application/reactflow');
+      const backgroundColour = event.dataTransfer.getData('backgroundColour');
 
       // check if the dropped element is valid
       if (typeof type === 'undefined' || !type) {
@@ -60,6 +58,14 @@ const DnDFlow = () => {
         type,
         position,
         data: { label: `${type}` },
+        style: {
+          background: `${backgroundColour}`,
+          fontSize: "20px",
+          width: "200px",
+          boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+          border: "0px",
+          borderRadius: "10px"
+        }
       };
 
       setNodes((nds) => nds.concat(newNode));

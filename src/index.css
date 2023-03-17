@@ -5,11 +5,12 @@
   height: 100%;
 }
 
-/* 사이드바 전체 */
+/* side 바 전체 */
 .dndflow aside {
   font-size: 12px; 
 }
 
+/* tab바 */
 .dndflow aside .tab {
   width: 18%;
   height: 65%;
@@ -20,10 +21,12 @@
 /* Layer 문구 */
 .dndflow aside .tab_title {
   margin-bottom: 10px;
+  margin-top: 30px;
   font-size: 30px;
   color: white;
   font-weight: bold;
   padding-left: 15px;
+  
 }
 
 /* 노드 컴포넌트 */
@@ -31,8 +34,8 @@
   height: 30px;
   padding: 4px;
   border-radius: 2px;
-  margin-top: 3.5%;
-  margin-bottom: 3.5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
   margin-left: 18%;
   margin-right: 18%;
   display: flex;
@@ -41,6 +44,7 @@
   cursor: grab;
   border-radius: 10px;
   font-size: 20px;
+  box-shadow: 7px 7px 7px 0px rgba(0,0,0,.20);
 }
 
 .dndflow .dndnode.Convolutional {
@@ -59,12 +63,12 @@
   background-color: #DEE8E4;
 }
 
-/* Layer 이름 */
+/* Layer 이름 text*/
 .dndflow .layer_name{
   font-size: 18px;
   padding-left: 25px;
 }
-/* Layer 목록 */
+/* Layer 목록 박스 */
 .dndflow aside .layer_list {
   width: 82%;
   height: 65%;
@@ -72,7 +76,12 @@
   background-color: lightgrey;
 }
 
-/* Layer Info */
+/* 토글 사이 간격 띄우기 */
+details > summary {
+  margin-top: 4%;
+}
+
+/* Layer Info 박스 */
 .dndflow aside .layer_info {
   width: 100%;
   height: 35%;
@@ -80,7 +89,7 @@
   background-color: #4e5058;
 }
 
-/* Layer Information 문구 */
+/* Layer Information 텍스트 */
 .dndflow .layer_info_title {
   text-align: center;
   font-size: 30px;
@@ -113,63 +122,3 @@
   }
 
 }
-
-/* 
-@media screen and (min-width: 250px) {
-  .dndflow {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  body {
-    height: 100%;
-    background-color: #4e5058;
-    font-size: 12px;
-  }
-} */
-
-/* .layer_info {
-  position: absolute;
-  height: 36.5%;
-  width: 25%;
-  top: 63.5%; 
-  left: 0%;
-  background-color: #4e5058;
-  text-align: center; 
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: white;
-  margin: 0px;
-  border: 0px;
-}
-
-.graph {
-  position: absolute;
-  height: 100%;
-  width: 75%;
-  left: 25%;
-  top: 0%;
-  background-color: rgba(255, 255, 255, 0.785);
-  margin: 0px;
-  border: 0px;
-}
-
-.sidebar {
-  position: absolute;
-  height: 63.5%;
-  width: 20%;
-  left: 5%;
-  top: 0%;
-  background-color: white;
-  margin: 0px;
-  border: 0px;
-}
-
-.sidebar_text {
-  position: absolute;
-  height: 0%;
-  width: 0%;
-  left: 8%;
-  top: 6%;
-  font-size: 1.3rem;
-  font-weight: bold;
-} */
