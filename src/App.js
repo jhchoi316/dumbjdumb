@@ -9,7 +9,7 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 
 
-import Sidebar from './Sidebar';
+import Aside from './Aside';
 
 import './index.css';
 
@@ -84,7 +84,7 @@ const DnDFlow = () => {
             <Controls />
           </ReactFlow>
         </div>
-        <Sidebar />
+        <Aside />
       </ReactFlowProvider>
     </div>
   );
