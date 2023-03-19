@@ -23,9 +23,14 @@
   margin-left: 18%;
   margin-top: 30%;
   background-color: lightgrey;
-  padding-right: 20%;
-  padding: 10%;
-  border-radius: 10%;
+  padding-right: 10%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  padding-left:10%;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border-top-right-radius: -15%;
+  border-bottom-right-radius: -15%;
 }
 .dndflow aside .tab_image {
   width: 64%;

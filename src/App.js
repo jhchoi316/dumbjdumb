@@ -10,21 +10,212 @@ import 'reactflow/dist/style.css';
 import Aside from './Aside';
 import './index.css';
 
-const initialNodes = [
-  {
-    id: '1',
-    type: 'default',
-    data: { label: 'YOLO' },
-    position: { x: 200, y: 100 },
-  },
-];
-
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 
 const DnDFlow = () => {
+  
+  const initialNodes = [
+    {
+      id: '1',
+      type: 'Conv2d',
+      data: { label: 'Con2vd' },
+      position: { x: 200, y: 100 },
+      style: {
+        background: "#f2e3dc",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '2',
+      type: 'BatchNorm2d',
+      data: { label: 'BatchNorm2d' },
+      position: { x: 200, y: 200 },
+      style: {
+        background: "#dee8e4",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '3',
+      type: 'ReLU',
+      data: { label: 'ReLU' },
+      position: { x: 200, y: 300 },
+      style: {
+        background: "#d9e3e8",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '4',
+      type: 'Conv2d',
+      data: { label: 'Con2vd' },
+      position: { x: 200, y: 400 },
+      style: {
+        background: "#f2e3dc",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '5',
+      type: 'BatchNorm2d',
+      data: { label: 'BatchNorm2d' },
+      position: { x: 200, y: 500 },
+      style: {
+        background: "#dee8e4",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '6',
+      type: 'ReLU',
+      data: { label: 'ReLU' },
+      position: { x: 200, y: 600 },
+      style: {
+        background: "#d9e3e8",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '7',
+      type: 'MaxPool2d',
+      data: { label: 'MaxPool2d' },
+      position: { x: 200, y: 700 },
+      style: {
+        background: "#faf1cb",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '8',
+      type: 'Conv2d',
+      data: { label: 'Con2vd' },
+      position: { x: 600, y: 100 },
+      style: {
+        background: "#f2e3dc",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '9',
+      type: 'BatchNorm2d',
+      data: { label: 'BatchNorm2d' },
+      position: { x: 600, y: 200 },
+      style: {
+        background: "#dee8e4",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '10',
+      type: 'ReLU',
+      data: { label: 'ReLU' },
+      position: { x: 600, y: 300 },
+      style: {
+        background: "#d9e3e8",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '11',
+      type: 'Conv2d',
+      data: { label: 'Con2vd' },
+      position: { x: 600, y: 400 },
+      style: {
+        background: "#f2e3dc",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '12',
+      type: 'BatchNorm2d',
+      data: { label: 'BatchNorm2d' },
+      position: { x: 600, y: 500 },
+      style: {
+        background: "#dee8e4",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '13',
+      type: 'ReLU',
+      data: { label: 'ReLU' },
+      position: { x: 600, y: 600 },
+      style: {
+        background: "#d9e3e8",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+    {
+      id: '14',
+      type: 'MaxPool2d',
+      data: { label: 'MaxPool2d' },
+      position: { x: 600, y: 700 },
+      style: {
+        background: "#faf1cb",
+        fontSize: "20px",
+        width: "200px",
+        boxShadow: "7px 7px 7px 0px rgba(0,0,0,.20)",
+        border: "0px",
+        borderRadius: "10px"
+      }
+    },
+
+  ]
   const reactFlowWrapper = useRef(null);
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
 
