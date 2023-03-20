@@ -17,7 +17,7 @@ const DnDFlow = () => {
   
   const initialNodes = [
     {
-      id: '1',
+      id: `dndnode_${id++}`,
       type: 'Conv2d',
       data: { label: 'Con2vd' },
       position: { x: 200, y: 100 },
@@ -31,7 +31,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '2',
+      id: `dndnode_${id++}`,
       type: 'BatchNorm2d',
       data: { label: 'BatchNorm2d' },
       position: { x: 200, y: 200 },
@@ -45,7 +45,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '3',
+      id: `dndnode_${id++}`,
       type: 'ReLU',
       data: { label: 'ReLU' },
       position: { x: 200, y: 300 },
@@ -59,7 +59,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '4',
+      id: `dndnode_${id++}`,
       type: 'Conv2d',
       data: { label: 'Con2vd' },
       position: { x: 200, y: 400 },
@@ -73,7 +73,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '5',
+      id: `dndnode_${id++}`,
       type: 'BatchNorm2d',
       data: { label: 'BatchNorm2d' },
       position: { x: 200, y: 500 },
@@ -87,7 +87,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '6',
+      id: `dndnode_${id++}`,
       type: 'ReLU',
       data: { label: 'ReLU' },
       position: { x: 200, y: 600 },
@@ -101,7 +101,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '7',
+      id: `dndnode_${id++}`,
       type: 'MaxPool2d',
       data: { label: 'MaxPool2d' },
       position: { x: 200, y: 700 },
@@ -115,7 +115,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '8',
+      id: `dndnode_${id++}`,
       type: 'Conv2d',
       data: { label: 'Con2vd' },
       position: { x: 600, y: 100 },
@@ -129,7 +129,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '9',
+      id: `dndnode_${id++}`,
       type: 'BatchNorm2d',
       data: { label: 'BatchNorm2d' },
       position: { x: 600, y: 200 },
@@ -143,7 +143,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '10',
+      id: `dndnode_${id++}`,
       type: 'ReLU',
       data: { label: 'ReLU' },
       position: { x: 600, y: 300 },
@@ -157,7 +157,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '11',
+      id: `dndnode_${id++}`,
       type: 'Conv2d',
       data: { label: 'Con2vd' },
       position: { x: 600, y: 400 },
@@ -171,7 +171,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '12',
+      id: `dndnode_${id++}`,
       type: 'BatchNorm2d',
       data: { label: 'BatchNorm2d' },
       position: { x: 600, y: 500 },
@@ -185,7 +185,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '13',
+      id: `dndnode_${id++}`,
       type: 'ReLU',
       data: { label: 'ReLU' },
       position: { x: 600, y: 600 },
@@ -199,7 +199,7 @@ const DnDFlow = () => {
       }
     },
     {
-      id: '14',
+      id: `dndnode_${id++}`,
       type: 'MaxPool2d',
       data: { label: 'MaxPool2d' },
       position: { x: 600, y: 700 },
