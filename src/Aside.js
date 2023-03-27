@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import layer_icon from "../src/img/layer_icon.png";
 import info_icon from "../src/img/info_icon.png";
 import abstract_icon from "../src/img/abstract_icon.png";
 import code_icon from "../src/img/code_icon.png";
+import Modal from "./Modal";
+import { DnDFlow } from "./App";
 
 export default () => {
-  const onDragStart = (event, nodeType, backgroundColour) => {
+  const onDragStart = (event, nodeType, backgroundColour, param) => {
     event.dataTransfer.setData(
       "application/reactflow",
       nodeType,
       backgroundColour
     );
     event.dataTransfer.setData("backgroundColour", backgroundColour);
+    event.dataTransfer.setData("param", param);
     event.dataTransfer.effectAllowed = "move";
   };
 
@@ -45,7 +48,9 @@ export default () => {
           <summary className="layer_name">Convolutional Layers</summary>
           <div
             className="dndnode Convolutional"
-            onDragStart={(event) => onDragStart(event, "Conv2d", "#F2E3DC")}
+            onDragStart={(event) =>
+              onDragStart(event, "Conv2d", "#F2E3DC", "hi")
+            }
             draggable
           >
             Conv2d

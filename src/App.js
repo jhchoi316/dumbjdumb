@@ -9,16 +9,18 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import Aside from "./Aside";
 import "./index.css";
+import Modal from "./Modal";
 
 let id = 15;
 const getId = () => `${id++}`;
+let clickedNode = 0;
 
-const DnDFlow = () => {
+export const DnDFlow = () => {
   const initialNodes = [
     {
       id: "1",
       type: "Conv2d",
-      data: { label: "Con2vd" },
+      data: { label: "Conv2d" },
       position: { x: 200, y: 100 },
       style: {
         background: "#f2e3dc",
@@ -60,7 +62,7 @@ const DnDFlow = () => {
     {
       id: "4",
       type: "Conv2d",
-      data: { label: "Con2vd" },
+      data: { label: "Conv2d" },
       position: { x: 200, y: 400 },
       style: {
         background: "#f2e3dc",
@@ -116,7 +118,7 @@ const DnDFlow = () => {
     {
       id: "8",
       type: "Conv2d",
-      data: { label: "Con2vd" },
+      data: { label: "Conv2d" },
       position: { x: 600, y: 100 },
       style: {
         background: "#f2e3dc",
@@ -158,7 +160,7 @@ const DnDFlow = () => {
     {
       id: "11",
       type: "Conv2d",
-      data: { label: "Con2vd" },
+      data: { label: "Conv2d" },
       position: { x: 600, y: 400 },
       style: {
         background: "#f2e3dc",
@@ -249,6 +251,7 @@ const DnDFlow = () => {
       const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
       const type = event.dataTransfer.getData("application/reactflow");
       const backgroundColour = event.dataTransfer.getData("backgroundColour");
+      const param = event.dataTransfer.getData("param");
 
       // check if the dropped element is valid
       if (typeof type === "undefined" || !type) {
@@ -264,7 +267,7 @@ const DnDFlow = () => {
         id: getId(),
         type,
         position,
-        data: { label: `${type}` },
+        data: { label: `${type}`, param: `${param}` },
         style: {
           background: `${backgroundColour}`,
           fontSize: "20px",
@@ -279,7 +282,15 @@ const DnDFlow = () => {
     },
     [reactFlowInstance]
   );
+  // modal 연습
+  const [openModal, setOpenModal] = useState(false);
 
+  const [state, setState] = useState("");
+  const onNodeClick = (event, node) => {
+    setState(node.data.label);
+    clickedNode = node.id;
+    //    console.log(nowc);
+  };
   return (
     <div className="dndflow">
       <ReactFlowProvider>
@@ -293,10 +304,14 @@ const DnDFlow = () => {
             onInit={setReactFlowInstance}
             onDrop={onDrop}
             onDragOver={onDragOver}
+            onNodeClick={() => {
+              setOpenModal(true);
+            }}
           >
             <Controls />
           </ReactFlow>
         </div>
+        {openModal && <Modal closeModal={setOpenModal} />}
         <Aside />
       </ReactFlowProvider>
     </div>
