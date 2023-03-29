@@ -1,33 +1,27 @@
 import React from "react";
-import { name } from "tar/lib/types";
 import "./Modal.css";
 
-// setOpenModal 함수를 사용하기 위해 PROPS로 전달
-export function Modal({ closeModal, name }) {
+export function Modal({ request, onChange, selectedNode, closeModal}) {
   return (
-    <div className="modalBackground">
-      {/* 실제 모달창.. 3개의 내부요소로 되어있다. */}
-      <div className="modalContainer">
-        {/* title - 제목 (노드 제목) 나타내는 부분 */}
+    <div className="modalContainer">
         <div className="title">
-          <h5>Conv2d</h5>
+          {selectedNode.type}
         </div>
-        {/* body - 내용 나타내는 부분 */}
         <div className="body">
-          <li>in_channels : 3</li>
-          <li>out_channels : 64</li>
-          <li>kernel_size : 3 x 3</li>
-          <li>stride : 1 x 1</li>
-          <li>padding : 1 x 1</li>
+          <li>in_channels : <input className="inputChannels" name="in_channels" value={request.in_channels} onChange={onChange} maxLength={3}/> </li>
+          <li>out_channels : <input className="inputChannels" name="out_channels" value={request.out_channels} onChange={onChange} maxLength={3}/></li>
+          <li>kernel_size : <input className="others" name="kernel_size1" value={request.kernel_size1} onChange={onChange} maxLength={3} /> x <input className="others" name="kernel_size2" value={request.kernel_size2} onChange={onChange} maxLength={3} />
+          </li>
+          <li>stride : <input className="others" name="stride1" value={request.stride1} onChange={onChange} maxLength={3} /> x <input className="others" name="stride2" value={request.stride2} onChange={onChange} maxLength={3} />
+          </li>
+          <li>padding : <input className="others"  name="padding1" value={request.padding1} onChange={onChange} maxLength={3} />  x  <input className="others"  name="padding2" value={request.padding2} onChange={onChange} maxLength={3} />
+            </li>
           <br></br>
         </div>
-        {/* footer - 버튼 들어있는 부분 */}
-        {/* onClick 클릭시 closeModal 함수 값 false로 변경 */}
         <div className="footer">
-          <button onClick={() => closeModal(false)}>Default</button>
-          <button onClick={() => closeModal(false)}>Save</button>
+          <button className="default" onClick={() => closeModal(false)}>Default</button>
+          <button className="save"  onClick={() => closeModal(false)}>Save</button>
         </div>
-      </div>
     </div>
   );
 }

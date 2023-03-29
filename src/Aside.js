@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+
 import layer_icon from "../src/img/layer_icon.png";
 import info_icon from "../src/img/info_icon.png";
 import abstract_icon from "../src/img/abstract_icon.png";
 import code_icon from "../src/img/code_icon.png";
-import Modal from "./Modal";
-import { DnDFlow } from "./App";
 
 export default () => {
   const onDragStart = (event, nodeType, backgroundColour, param) => {
